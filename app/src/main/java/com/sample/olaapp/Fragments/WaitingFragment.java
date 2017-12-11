@@ -7,7 +7,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.sample.olaapp.Model.Helper;
 import com.sample.olaapp.R;
 
 import butterknife.ButterKnife;
@@ -35,5 +37,6 @@ public class WaitingFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        Toast.makeText(getActivity(), Helper.getStringSharedPreference("ACTIVE_DRIVER", getActivity()), Toast.LENGTH_LONG).show();
     }
 }
